@@ -60,7 +60,7 @@ def main():
     user_selection = choose_mark()
     computer_selection = computer_mark(user_selection)
     print(f"Place your mark on the board\nby entering a number between\n1 and 9")
-
+    
 
 marks = {1:'1', 2:'2', 3:'3', 4:'4', 5:'5', 6:'6', 7:'7', 8:'8', 9:'9'}
 print("let's begin!")

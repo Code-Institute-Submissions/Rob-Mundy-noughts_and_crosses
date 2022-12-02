@@ -1,3 +1,5 @@
+#dictionary of marks i.e. spaces where X's and O's can be marked
+#numbered key as key will be visible and values are letters
 marks = {1:'1', 2:'2', 3:'3', 4:'4', 5:'5', 6:'6', 7:'7', 8:'8', 9:'9'}
 
 def design_board(marks):
@@ -9,9 +11,6 @@ def design_board(marks):
             f"{marks[4]}|{marks[5]}|{marks[6]}\n"
             f"{marks[7]}|{marks[8]}|{marks[9]}")
     print(board)
-
-
-design_board(marks)
 
 #def choose_mark()
     #asks user to pick an 'x' or 'o'
@@ -37,5 +36,11 @@ design_board(marks)
     #random computer guess
     # improve: apply some logic to make it more difficult?
 
+def main():
+    """
+    Run all game functions
+    """
+    design_board(marks)
 
-
+print("let's begin!")
+main()

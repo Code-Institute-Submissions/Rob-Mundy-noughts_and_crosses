@@ -23,6 +23,19 @@ def choose_mark():
     print(f"You chose {user_choice}")
     return user_choice
     
+    
+
+def computer_mark(user_selection):
+    """
+    determines computer's choice based on
+    user's input
+    """
+    computer_choice = 'x' if user_selection == 'o' else 'o'
+    print(f"Computer is {computer_choice}")
+    return computer_choice
+    
+    
+
 
 #def which_turn()
     #determines whether it is the user or computer's turn
@@ -49,7 +62,8 @@ def main():
     Run all game functions
     """
     design_board(marks)
-    choose_mark()
+    user_selection = choose_mark()
+    computer_selection = computer_mark(user_selection)
     print(f"Place your mark on the board\nby entering a number between\n1 and 9")
 
 print("let's begin!")

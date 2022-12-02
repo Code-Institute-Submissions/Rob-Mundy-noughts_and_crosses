@@ -1,4 +1,4 @@
-#dictionary of marks i.e. spaces where X's and O's can be marked
+#dictionary of marks i.e. spaces where x's and o's can be marked
 #numbered key as key will be visible and values are letters
 marks = {1:'1', 2:'2', 3:'3', 4:'4', 5:'5', 6:'6', 7:'7', 8:'8', 9:'9'}
 
@@ -50,6 +50,7 @@ def main():
     """
     design_board(marks)
     choose_mark()
+    print(f"Place your mark on the board\nby entering a number between\n1 and 9")
 
 print("let's begin!")
 main()

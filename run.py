@@ -12,9 +12,17 @@ def design_board(marks):
             f"{marks[7]}|{marks[8]}|{marks[9]}")
     print(board)
 
-#def choose_mark()
-    #asks user to pick an 'x' or 'o'
+def choose_mark():
+    """
+    asks user to pick an 'x' or 'o'
+    """
     #computer defaults to !user
+    user_choice = None
+    while user_choice not in {'x', 'o'}:
+        user_choice = input('Please select "x" or "o"\n')
+    print(f"You chose {user_choice}")
+    return user_choice
+    
 
 #def which_turn()
     #determines whether it is the user or computer's turn
@@ -41,6 +49,7 @@ def main():
     Run all game functions
     """
     design_board(marks)
+    choose_mark()
 
 print("let's begin!")
 main()

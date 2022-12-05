@@ -34,7 +34,9 @@ def computer_mark(user_selection):
 
 def user_turn():
     """
-    replaces available list value with user's mark on the board
+    Asks user to choose a space,
+    removes choice from available list,
+    places user's mark on the board
     """
     while True:
         try:
@@ -45,8 +47,8 @@ def user_turn():
         if user_input in available_marks:
             print(f'You chose {user_input}')
             available_marks.remove(user_input)
-            print(available_marks)
-
+            #print(available_marks)
+            break
 
 def which_turn():
     #determines whether it is the user or computer's turn
@@ -86,7 +88,7 @@ def main():
     computer_selection = computer_mark(user_selection)
     #print(f"Place your mark on the board\nby entering a number between\n1 and 9")
     design_board(marks)
-    user_turn()
+    which_turn()
 
 
 

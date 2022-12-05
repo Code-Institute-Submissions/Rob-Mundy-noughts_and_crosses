@@ -40,7 +40,7 @@ def user_turn():
     """
     while True:
         try:
-            user_input = int(input("Choose your space: "))
+            user_input = int(input("Your turn: "))
         except ValueError:
             print("Please choose a free space")
             continue
@@ -49,7 +49,9 @@ def user_turn():
             available_spaces.remove(user_input)
             # print(available_spaces)
             # update_marks(marks)
-            return user_input
+        marks[user_input] = user_selection
+        print(f'You chose {user_input}')
+        design_board(marks)
         break
 
 
@@ -58,13 +60,14 @@ def which_turn():
     determines whether it is the user's turn or
     the computer's
     """
-    turn = 1
-    if turn % 2 == 0:
-        user_turn()
-    else:
-        computer_turn()
-    turn += 1
-    # print(f'Turn is {turn}')
+    turn = 0
+    while available_spaces:
+        if turn % 2 == 0:
+            user_turn()
+        else:
+            computer_turn()
+        turn += 1
+        # print(f'Turn is {turn}')
 
 
 # def update_marks(user_input):
@@ -89,7 +92,7 @@ def computer_turn():
     available_spaces.remove(computer_input)
     # print(available_spaces)
     marks[computer_input] = computer_selection
-    print(f'Computer chose {computer_input}.  Your turn: ')
+    print(f'Computer chose {computer_input}')
     design_board(marks)
 
 
@@ -101,11 +104,9 @@ def main():
     which_turn()
 
 
-
 marks = {1:'1', 2:'2', 3:'3', 4:'4', 5:'5', 6:'6', 7:'7', 8:'8', 9:'9'}
 available_spaces = [1,2,3,4,5,6,7,8,9]
 print("let's begin!")
 user_selection = choose_mark()
 computer_selection = computer_mark(user_selection)
-
 main()

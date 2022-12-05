@@ -42,17 +42,19 @@ def user_turn():
         try:
             user_input = int(input("Your turn: "))
         except ValueError:
-            print("Please choose a free space")
+            print("That isn't available.\nTry again: ")
             continue
-        if user_input in available_spaces:
-            print(f'You chose {user_input}')
-            available_spaces.remove(user_input)
-            # print(available_spaces)
-            # update_marks(marks)
-            marks[user_input] = user_selection
+        if user_input not in available_spaces:
+            print("Please choose a FREE space")
+            continue
+            # print(f'You chose {user_input}')
+        available_spaces.remove(user_input)
+        # print(available_spaces)
+        # update_marks(marks)
+        marks[user_input] = user_selection
         # print(f'You chose {user_input}')
-            print(available_spaces)
-            design_board(marks)
+        print(available_spaces)
+        design_board(marks)
         break
 
 

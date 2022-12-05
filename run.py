@@ -31,14 +31,40 @@ def computer_mark(user_selection):
     print(f"Computer is {computer_choice}")
     return computer_choice
 
-#def which_turn()
+
+def user_turn():
+    """
+    replaces available list value with user's mark on the board
+    """
+    while True:
+        try:
+            user_input = int(input("Choose your space: "))
+        except ValueError:
+            print("Please choose a free space")
+            continue
+        if user_input in available_marks:
+            print(f'You chose {user_input}')
+            available_marks.remove(user_input)
+            print(available_marks)
+
+
+def which_turn():
     #determines whether it is the user or computer's turn
     #use modulo?
     #improve: randomise first attempt to see who goes first
+    turn = 0
+    if turn % 2 == 0:
+        user_turn()
+    else:
+        computer_turn()
+        turn += 1
 
-#def check_board()
+
+#def update_available()
     #check free spaces
     #could use separate list?
+
+
 
 #def check_winner()
     #check whether there is 3 in a row of either mark (x/o)
@@ -56,12 +82,15 @@ def main():
     """
     Run all game functions
     """
-    design_board(marks)
     user_selection = choose_mark()
     computer_selection = computer_mark(user_selection)
-    print(f"Place your mark on the board\nby entering a number between\n1 and 9")
-    
+    #print(f"Place your mark on the board\nby entering a number between\n1 and 9")
+    design_board(marks)
+    user_turn()
+
+
 
 marks = {1:'1', 2:'2', 3:'3', 4:'4', 5:'5', 6:'6', 7:'7', 8:'8', 9:'9'}
+available_marks = [1,2,3,4,5,6,7,8,9]
 print("let's begin!")
 main()

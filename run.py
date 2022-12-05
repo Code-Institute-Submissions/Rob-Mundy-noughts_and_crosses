@@ -45,14 +45,14 @@ def user_turn():
             print("Please choose a free space")
             continue
         if user_input in available_spaces:
-            # print(f'You chose {user_input}')
+            print(f'You chose {user_input}')
             available_spaces.remove(user_input)
             # print(available_spaces)
             # update_marks(marks)
             marks[user_input] = user_selection
-        #print(f'You chose {user_input}')
-        print(available_spaces)
-        design_board(marks)
+        # print(f'You chose {user_input}')
+            print(available_spaces)
+            design_board(marks)
         break
 
 
@@ -107,7 +107,7 @@ def main():
 
 marks = {1:'1', 2:'2', 3:'3', 4:'4', 5:'5', 6:'6', 7:'7', 8:'8', 9:'9'}
 available_spaces = [1,2,3,4,5,6,7,8,9]
-print("let's begin!")
+print("Let's begin!")
 user_selection = choose_mark()
 computer_selection = computer_mark(user_selection)
 main()

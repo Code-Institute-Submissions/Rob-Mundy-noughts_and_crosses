@@ -49,8 +49,9 @@ def user_turn():
             available_spaces.remove(user_input)
             # print(available_spaces)
             # update_marks(marks)
-        marks[user_input] = user_selection
-        print(f'You chose {user_input}')
+            marks[user_input] = user_selection
+        #print(f'You chose {user_input}')
+        print(available_spaces)
         design_board(marks)
         break
 
@@ -90,9 +91,9 @@ def computer_turn():
     from available list of numbers"""
     computer_input = random.choice(available_spaces)
     available_spaces.remove(computer_input)
-    # print(available_spaces)
     marks[computer_input] = computer_selection
     print(f'Computer chose {computer_input}')
+    print(available_spaces)
     design_board(marks)
 
 

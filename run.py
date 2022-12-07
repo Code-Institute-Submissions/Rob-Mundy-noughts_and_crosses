@@ -73,7 +73,6 @@ def check_winner(marks):
         return True
 
 
-
 def computer_turn():
     """
     selects a random number for the computer from available
@@ -96,6 +95,9 @@ computer_selection = computer_mark(user_selection)
 design_board(marks)
 
 while not declare_winner:
+    if turn == 9:
+        print("It's a stalemate!")
+        break
 
     while available_spaces:
 
@@ -103,7 +105,7 @@ while not declare_winner:
             user_turn()
         else:
             computer_turn()
-        turn += 1
         design_board(marks)
         declare_winner = check_winner(marks)
+        turn += 1
         break

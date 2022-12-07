@@ -67,6 +67,7 @@ def computer_turn():
     selects a random number for the computer from available 
     list of numbers"""
     print("Computer's turn: ")
+    random.shuffle(available_spaces)
     computer_input = random.choice(available_spaces)
     available_spaces.remove(computer_input)
     marks[computer_input] = computer_selection

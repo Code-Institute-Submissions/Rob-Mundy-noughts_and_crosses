@@ -42,7 +42,7 @@ def user_turn():
             print("That isn't available. Try again: ")
             continue
         if user_input not in available_spaces:
-            print("Please choose a FREE space")
+            print("Please choose a free space")
             continue
         available_spaces.remove(user_input)
         marks[user_input] = user_selection
@@ -60,11 +60,23 @@ def check_winner(marks):
         or (marks[7] == marks[8] == marks[9]):
         print("We have a winner!")
         return True
+    # Check vertical 3 in a row
+    elif (marks[1] == marks[4] == marks[7]) \
+        or (marks[2] == marks[5] == marks[8]) \
+        or (marks[3] == marks[6] == marks[9]):
+        print("We have a winner!")
+        return True
+    # Check diagonal 3 in a row
+    elif (marks[1] == marks[5] == marks[9]) \
+        or (marks[3] == marks[5] == marks[7]):
+        print("We have a winner!")
+        return True
+
 
 
 def computer_turn():
     """
-    selects a random number for the computer from available 
+    selects a random number for the computer from available
     list of numbers"""
     print("Computer's turn: ")
     random.shuffle(available_spaces)
@@ -76,10 +88,11 @@ def computer_turn():
 
 marks = {1:'1', 2:'2', 3:'3', 4:'4', 5:'5', 6:'6', 7:'7', 8:'8', 9:'9'}
 available_spaces = [1,2,3,4,5,6,7,8,9]
+declare_winner = False
+turn = 0
+
 user_selection = choose_mark()
 computer_selection = computer_mark(user_selection)
-declare_winner = False 
-turn = 0
 design_board(marks)
 
 while not declare_winner:

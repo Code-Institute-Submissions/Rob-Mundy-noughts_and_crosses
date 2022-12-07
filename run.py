@@ -3,7 +3,7 @@ import random
 
 def design_board(marks):
     """
-    creates initial board of 9 spaces using a dictionary
+    generates a 3 x 3 board of 9 spaces using a dictionary
     that corresponds to the numbers on a keypad/telephone
     """
     board = (f"{marks[1]}|{marks[2]}|{marks[3]}\n"
@@ -44,7 +44,9 @@ def user_turn():
         if user_input not in available_spaces:
             print("Please choose a free space")
             continue
+        # removes user's choice from available numbers
         available_spaces.remove(user_input)
+        # replaces the placeholder number on board with user's mark (x or o)
         marks[user_input] = user_selection
         break
 
@@ -77,9 +79,13 @@ def computer_turn():
     selects a random number for the computer from available
     list of numbers"""
     print("Computer's turn: ")
+    # shuffles list of available numbers
     random.shuffle(available_spaces)
+    # chooses random number from list of available numbers
     computer_input = random.choice(available_spaces)
+    # removes computer's choice from available numbers
     available_spaces.remove(computer_input)
+    # replaces the placeholder number on board with computer's mark (x or o)
     marks[computer_input] = computer_selection
 
 
@@ -94,6 +100,7 @@ computer_selection = computer_mark(user_selection)
 design_board(marks)
 
 while not declare_winner:
+    # declares a draw if board is full and there's no winner
     if turn == 9:
         print("It's a stalemate!")
         break

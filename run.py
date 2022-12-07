@@ -46,7 +46,6 @@ def user_turn():
             continue
         available_spaces.remove(user_input)
         marks[user_input] = user_selection
-        # design_board(marks)
         break
 
 
@@ -58,18 +57,18 @@ def check_winner(marks):
     if (marks[1] == marks[2] == marks[3]) \
         or (marks[4] == marks[5] == marks[6]) \
         or (marks[7] == marks[8] == marks[9]):
-        print("We have a winner!")
+        print(f"{current_player} wins!")
         return True
     # Check vertical 3 in a row
     elif (marks[1] == marks[4] == marks[7]) \
         or (marks[2] == marks[5] == marks[8]) \
         or (marks[3] == marks[6] == marks[9]):
-        print("We have a winner!")
+        print(f"{current_player} wins!")
         return True
     # Check diagonal 3 in a row
     elif (marks[1] == marks[5] == marks[9]) \
         or (marks[3] == marks[5] == marks[7]):
-        print("We have a winner!")
+        print(f"{current_player} wins!")
         return True
 
 
@@ -82,13 +81,13 @@ def computer_turn():
     computer_input = random.choice(available_spaces)
     available_spaces.remove(computer_input)
     marks[computer_input] = computer_selection
-    # design_board(marks)
 
 
 marks = {1:'1', 2:'2', 3:'3', 4:'4', 5:'5', 6:'6', 7:'7', 8:'8', 9:'9'}
 available_spaces = [1,2,3,4,5,6,7,8,9]
 declare_winner = False
 turn = 0
+current_player = None
 
 user_selection = choose_mark()
 computer_selection = computer_mark(user_selection)
@@ -100,11 +99,12 @@ while not declare_winner:
         break
 
     while available_spaces:
-
         if turn % 2 == 0:
             user_turn()
+            current_player = "User"
         else:
             computer_turn()
+            current_player = "Computer"
         design_board(marks)
         declare_winner = check_winner(marks)
         turn += 1

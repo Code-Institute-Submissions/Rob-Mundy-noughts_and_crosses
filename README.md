@@ -4,31 +4,23 @@
 
 The Noughts and Crosses.....
 
-+ ## Rules
++ ## How to play
 
 Noughts and Crosses.....
 
 # Features
 
-+ ## Navigation
++ ## Existing Features
     
-+ ## The game zone
+    + The game zone
 
-+ ## The user selection zone
+    + 
 
-+ ## The battle area
++ ## Future Features
 
-+ ## The Let's Play! button
+    + The battle area
 
-+ ## The Score tally section
-        
-# UX Design
-
-+ ## Color Palette
-
-+ ## Fonts
-
-+ ## Media Queries
+    + The Let's Play! button
 
 # Testing
 

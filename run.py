@@ -111,9 +111,10 @@ declare_winner = False
 turn = 0
 current_player = None
 
+os.system('cls||clear')
 user_selection = choose_mark()
 computer_selection = computer_mark(user_selection)
-design_board(marks) 
+design_board(marks)
 
 while not declare_winner:
     # declares a draw if board is full and there's no winner

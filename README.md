@@ -1,6 +1,6 @@
 # Noughts and Crosses
 
-[View the live project here]()
+[View the live project here](https://noughts-and-crosses-rm.herokuapp.com/)
 
 The Noughts and Crosses.....
 
@@ -50,7 +50,7 @@ Noughts and Crosses.....
 
 + ## Python
 
-    + Passed through https://www.pythonchecker.com/
+    + The program passed through [pythonchecker.com](https://www.pythonchecker.com/) without any hints.
 
 + ## Accessibility 
 

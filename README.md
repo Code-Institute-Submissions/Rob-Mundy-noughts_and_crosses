@@ -32,15 +32,15 @@ The winner is the player that places 3 of their marks in a row.
 
 + ## Future Features
 
-    + 
+    + Add option for two player mode rather than vs computer.
 
-    + 
+    + Apply some logic to make the computer more competitive as playing against randomly-generated moves isn't particularly challenging.
 
 # Testing
 
-+ I have tested that 
+I have manually tested this project in the following ways: 
 
-+ 
++ The program passed through [pythonchecker.com](https://www.pythonchecker.com/) without any hints.
 
 + I have tested the [README.md](https://github.com/Rob-Mundy/Noughts_and_Crosses#readme) file with the [MD Reader](https://chrome.google.com/webstore/detail/md-reader/medapdbncneneejhbgcjceippjlfkmkg) extension for Chrome.
 
@@ -51,16 +51,6 @@ The winner is the player that places 3 of their marks in a row.
 + 
 
 + There are no outstanding bugs
-
-# Validator Testing
-
-+ ## Python
-
-    + The program passed through [pythonchecker.com](https://www.pythonchecker.com/) without any hints.
-
-+ ## Accessibility 
-
-    +   
 
 # Deployment
 

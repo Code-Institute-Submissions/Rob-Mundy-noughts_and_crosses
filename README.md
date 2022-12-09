@@ -1,31 +1,73 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Noughts and Crosses
 
-Welcome Rob-Mundy,
+[View the live project here]()
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+The Noughts and Crosses.....
 
-## Reminders
++ ## Rules
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+Noughts and Crosses.....
 
-## Creating the Heroku app
+# Features
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
++ ## Navigation
+    
++ ## The game zone
 
-1. `heroku/python`
-2. `heroku/nodejs`
++ ## The user selection zone
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
++ ## The battle area
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
++ ## The Let's Play! button
 
-Connect your GitHub repository and deploy as normal.
++ ## The Score tally section
+        
+# UX Design
 
-## Constraints
++ ## Color Palette
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
++ ## Fonts
 
------
-Happy coding!
++ ## Media Queries
+
+# Testing
+
++ I have tested that 
+
++ 
+
++ I have tested the [README.md](https://github.com/Rob-Mundy/Noughts_and_Crosses#readme) file with the [MD Reader](https://chrome.google.com/webstore/detail/md-reader/medapdbncneneejhbgcjceippjlfkmkg) extension for Chrome.
+
+# Bugs
+
++    
+
++ 
+
++ 
+
+# Validator Testing
+
++ ## Python
+
+    + 
+
++ ## Accessibility 
+
+    +   
+
+# Deployment
+
+## Heroku 
+
+The site was deployed to Heroku via the following process:
+
++ 
+
+# Credits
+
+## Content
+
++ 
+
++ 

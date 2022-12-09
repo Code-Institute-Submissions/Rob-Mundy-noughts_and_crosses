@@ -105,7 +105,7 @@ while not declare_winner:
     if turn == 9:
         print("It's a stalemate!")
         break
-    
+
     # iterates turn if there are available spaces on the board
     while available_spaces:
         if turn % 2 == 0:

@@ -2,7 +2,11 @@
 
 [View the live project here](https://noughts-and-crosses-rm.herokuapp.com/)
 
-The Noughts and Crosses.....
+NOUGHTS & CROSSES is a Python terminal-based version of the classic paper and pencil game also known as "Tic-tac-toe".
+
+Users can try to beat the computer by placing 3 of their marks (x's or o's) in a row horizontally, vertically or diagonally. There are 8 possible ways to win.
+
+A stalemate will be declared if all of the spaces are populated without either player placing 3 in a row.
 
 + ## How to play
 
@@ -12,15 +16,15 @@ Noughts and Crosses.....
 
 + ## Existing Features
     
-    + The game zone
+    + 
 
     + 
 
 + ## Future Features
 
-    + The battle area
+    + 
 
-    + The Let's Play! button
+    + 
 
 # Testing
 
@@ -36,7 +40,7 @@ Noughts and Crosses.....
 
 + 
 
-+ 
++ There are no outstanding bugs
 
 # Validator Testing
 

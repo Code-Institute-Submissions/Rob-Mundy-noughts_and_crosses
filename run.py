@@ -4,7 +4,7 @@ import random
 def design_board(marks):
     """
     generates a 3 x 3 board of 9 spaces using a dictionary
-    that corresponds to the numbers on a keypad/telephone
+    that corresponds to the numbers on a keypad / telephone
     """
     board = (f"{marks[1]}|{marks[2]}|{marks[3]}\n"
             f"{marks[4]}|{marks[5]}|{marks[6]}\n"
@@ -14,7 +14,7 @@ def design_board(marks):
 
 def choose_mark():
     """
-    asks user to pick an 'x' or 'o'
+    asks user to pick a 'x' or 'o' as their mark
     """
     user_choice = None
     while user_choice not in {'x', 'o'}:
@@ -41,6 +41,7 @@ def user_turn():
         except ValueError:
             print("That isn't available. Try again: ")
             continue
+        # validates user's input against available board spaces
         if user_input not in available_spaces:
             print("Please choose a free space")
             continue
@@ -53,7 +54,7 @@ def user_turn():
 
 def check_winner(marks):
     """
-    check whether there is 3 in a row of either mark (x/o)
+    check whether there is 3 in a row of either mark (x / o)
     """
     # Check horizontal 3 in a row
     if (marks[1] == marks[2] == marks[3]) \
@@ -104,7 +105,8 @@ while not declare_winner:
     if turn == 9:
         print("It's a stalemate!")
         break
-
+    
+    # iterates turn if there are available spaces on the board
     while available_spaces:
         if turn % 2 == 0:
             user_turn()

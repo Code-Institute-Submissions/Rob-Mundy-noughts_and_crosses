@@ -10,7 +10,7 @@ def design_board(marks):
     board = (f"{marks[1]}|{marks[2]}|{marks[3]}\n"
             f"{marks[4]}|{marks[5]}|{marks[6]}\n"
             f"{marks[7]}|{marks[8]}|{marks[9]}")
-    print(board)
+    simulate_typing(board)
 
 
 def choose_mark():
@@ -61,18 +61,18 @@ def check_winner(marks):
     if (marks[1] == marks[2] == marks[3]) \
         or (marks[4] == marks[5] == marks[6]) \
         or (marks[7] == marks[8] == marks[9]):
-        print(f"{current_player} wins!")
+        simulate_typing(f"{current_player} wins!")
         return True
     # Check vertical 3 in a row
     elif (marks[1] == marks[4] == marks[7]) \
         or (marks[2] == marks[5] == marks[8]) \
         or (marks[3] == marks[6] == marks[9]):
-        print(f"{current_player} wins!")
+        simulate_typing(f"{current_player} wins!")
         return True
     # Check diagonal 3 in a row
     elif (marks[1] == marks[5] == marks[9]) \
         or (marks[3] == marks[5] == marks[7]):
-        print(f"{current_player} wins!")
+        simulate_typing(f"{current_player} wins!")
         return True
 
 
@@ -91,6 +91,17 @@ def computer_turn():
     marks[computer_input] = computer_selection
 
 
+def simulate_typing(str):
+    """
+    Prints to the terminal as if typing
+    """
+    for i in str:
+        sys.stdout.write(i)
+        sys.stdout.flush()
+        time.sleep(0.04)
+    sys.stdout.write("\n")
+
+
 marks = {1:'1', 2:'2', 3:'3', 4:'4', 5:'5', 6:'6', 7:'7', 8:'8', 9:'9'}
 available_spaces = [1,2,3,4,5,6,7,8,9]
 declare_winner = False
@@ -99,12 +110,12 @@ current_player = None
 
 user_selection = choose_mark()
 computer_selection = computer_mark(user_selection)
-design_board(marks)
+design_board(marks) 
 
 while not declare_winner:
     # declares a draw if board is full and there's no winner
     if turn == 9:
-        print("It's a stalemate!")
+        simulate_typing("It's a stalemate!")
         break
 
     # iterates turn if there are available spaces on the board

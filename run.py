@@ -22,7 +22,7 @@ def choose_mark():
     """
     user_choice = None
     while user_choice not in {'x', 'o'}:
-        user_choice = input('Please select "x" or "o"\n')
+        user_choice = input('Please select "o" or "x"\n')
     return user_choice
 
 
@@ -112,6 +112,7 @@ turn = 0
 current_player = None
 
 os.system('cls||clear')
+simulate_typing("Let's play NOUGHTS & CROSSES!")
 user_selection = choose_mark()
 computer_selection = computer_mark(user_selection)
 design_board(marks)

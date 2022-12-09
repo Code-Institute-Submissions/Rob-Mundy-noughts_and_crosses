@@ -1,4 +1,7 @@
-import random, os, sys, time
+import random
+import os
+import sys
+import time
 
 
 def design_board(marks):

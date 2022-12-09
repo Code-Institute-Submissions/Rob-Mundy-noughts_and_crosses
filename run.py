@@ -1,4 +1,5 @@
 import random
+import os
 
 
 def design_board(marks):
@@ -6,6 +7,7 @@ def design_board(marks):
     generates a 3 x 3 board of 9 spaces using a dictionary
     that corresponds to the numbers on a keypad / telephone
     """
+    os.system('cls||clear')
     board = (f"{marks[1]}|{marks[2]}|{marks[3]}\n"
             f"{marks[4]}|{marks[5]}|{marks[6]}\n"
             f"{marks[7]}|{marks[8]}|{marks[9]}")

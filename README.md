@@ -50,7 +50,7 @@ Noughts and Crosses.....
 
 + ## Python
 
-    + 
+    + Passed through https://www.pythonchecker.com/
 
 + ## Accessibility 
 

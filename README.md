@@ -130,7 +130,7 @@ This project was deployed to Heroku via the following process:
 
 + Following a short build process a link to the project becomes available
 
-+ Click "View" to [open the project in a new window]()
++ Click "View" to [open the project in a new window](https://noughts-and-crosses-rm.herokuapp.com/)
 
 
 # Credits

@@ -4,16 +4,16 @@ import sys
 import time
 
 
-def design_board(spaces_dict):
+def design_board(dictionary):
     """
     generates a 3 x 3 board of 9 spaces using a dictionary
     that corresponds to the numbers on a keypad / telephone
     """
     os.system("cls||clear")
     board = (
-        f"{spaces_dict[1]}|{spaces_dict[2]}|{spaces_dict[3]}\n"
-        f"{spaces_dict[4]}|{spaces_dict[5]}|{spaces_dict[6]}\n"
-        f"{spaces_dict[7]}|{spaces_dict[8]}|{spaces_dict[9]}"
+        f"{spaces[1]}|{spaces[2]}|{spaces[3]}\n"
+        f"{spaces[4]}|{spaces[5]}|{spaces[6]}\n"
+        f"{spaces[7]}|{spaces[8]}|{spaces[9]}"
     )
     simulate_typing(board)
 
@@ -28,7 +28,7 @@ def choose_mark():
     return user_choice
 
 
-def computer_mark(user_selection):
+def computer_mark(string):
     """
     determines computer's mark based on user's input
     """
@@ -62,34 +62,39 @@ def user_turn():
         # removes user's choice from available numbers
         available_spaces.remove(user_input)
         # replaces the placeholder number on board with user's mark (x or o)
-        spaces_dict[user_input] = user_selection
+        spaces[user_input] = user_selection
         break
 
 
-def check_winner(spaces_dict):
+def check_winner(dictionary):
     """
     check whether there is 3 in a row of either mark (x / o)
     """
-    # Check horizontal 3 in a row
+
     if (
-        (spaces_dict[1] == spaces_dict[2] == spaces_dict[3])
-        or (spaces_dict[4] == spaces_dict[5] == spaces_dict[6])
-        or (spaces_dict[7] == spaces_dict[8] == spaces_dict[9])
+        (spaces[1] == spaces[2] == spaces[3])
+        or (spaces[4] == spaces[5] == spaces[6])
+        or (spaces[7] == spaces[8] == spaces[9])
     ):
         simulate_typing(f"{current_player} wins!")
         return True
     # Check vertical 3 in a row
     elif (
-        (spaces_dict[1] == spaces_dict[4] == spaces_dict[7])
-        or (spaces_dict[2] == spaces_dict[5] == spaces_dict[8])
-        or (spaces_dict[3] == spaces_dict[6] == spaces_dict[9])
+        (spaces[1] == spaces[4] == spaces[7])
+        or (spaces[2] == spaces[5] == spaces[8])
+        or (spaces[3] == spaces[6] == spaces[9])
     ):
         simulate_typing(f"{current_player} wins!")
         return True
     # Check diagonal 3 in a row
-    elif (spaces_dict[1] == spaces_dict[5] == spaces_dict[9]) or (spaces_dict[3] == spaces_dict[5] == spaces_dict[7]):
+    elif (
+        (spaces[1] == spaces[5] == spaces[9])
+        or (spaces[3] == spaces[5] == spaces[7])
+    ):
         simulate_typing(f"{current_player} wins!")
         return True
+    else:
+        return False
 
 
 def computer_turn():
@@ -104,21 +109,22 @@ def computer_turn():
     # removes computer's choice from available numbers
     available_spaces.remove(computer_input)
     # replaces the placeholder number on board with computer's mark (x or o)
-    spaces_dict[computer_input] = computer_selection
+    spaces[computer_input] = computer_selection
 
 
-def simulate_typing(str):
+def simulate_typing(string):
     """
     Prints to the terminal as if typing
     """
-    for i in str:
+    for i in string:
         sys.stdout.write(i)
         sys.stdout.flush()
         time.sleep(0.05)
     sys.stdout.write("\n")
 
 
-spaces_dict = {1: "1", 2: "2", 3: "3", 4: "4", 5: "5", 6: "6", 7: "7", 8: "8", 9: "9"}
+spaces = {1: "1", 2: "2", 3: "3", 4: "4", 5: "5",
+          6: "6", 7: "7", 8: "8", 9: "9"}
 available_spaces = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 declare_winner = False
 turn = 0
@@ -128,7 +134,7 @@ os.system("cls||clear")
 simulate_typing("Let's play NOUGHTS & CROSSES!")
 user_selection = choose_mark()
 computer_selection = computer_mark(user_selection)
-design_board(spaces_dict)
+design_board(spaces)
 
 turn = first_turn()
 current_player = "User" if turn == 0 else "Computer"
@@ -148,7 +154,7 @@ while not declare_winner:
         else:
             computer_turn()
             current_player = "Computer"
-        design_board(spaces_dict)
-        declare_winner = check_winner(spaces_dict)
+        design_board(spaces)
+        declare_winner = check_winner(spaces)
         turn += 1
         break

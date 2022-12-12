@@ -2,13 +2,15 @@
 
 [View the live project here](https://noughts-and-crosses-rm.herokuapp.com/)
 
+![am_i_responsive_home_page_results](./assets/images/terminal_screengrab.png)
+
 NOUGHTS & CROSSES is a Python terminal-based version of the classic paper and pencil game also known as "Tic-tac-toe".
 
 Users can try to beat the computer by placing 3 of their marks (x's or o's) in a row.
 
-+ ## How to play
+# How to play
 
-NOUGHTS & CROSSES is a classic strategy game that can trace its roots back to the Romans or even ancient Egyptians!  [See wikipedia for more info](https://en.wikipedia.org/wiki/Tic-tac-toe).
+NOUGHTS & CROSSES is a classic strategy game that can trace its roots back to the Romans or even ancient Egyptians!  [See Wikipedia for more info](https://en.wikipedia.org/wiki/Tic-tac-toe).
 
 There are 8 possible ways to win by placing 3 of your chosen marks in a row horizontally, vertically or diagonally.
 
@@ -28,13 +30,17 @@ The winner is the player that places 3 of their marks in a row.
 
     + Creation of a 3 x 3 game board
 
-        + + Pre-populated with placeholder numbers
+        + Pre-populated with placeholder numbers
 
-        + + Placeholders replaced each turn by user/computer's designated marks
+        + Placeholders replaced each turn by user/computer's designated marks
+
+            ![starting_board](./assets/images/starting_grid_screengrab.png)
     
     + User is able to select their mark, x or o, via an input command
 
-        + + input validation limited to x or o
+        + input validation limited to x or o
+
+            ![input_validation](./assets/images/input_validation_mark_screengrab.png)
 
     + Automatic designation of computer's mark based on user's input
 
@@ -46,25 +52,33 @@ The winner is the player that places 3 of their marks in a row.
 
     + If user's turn, accept input 
 
-        + + input validation 
-        
-        + + Only able to select from the list of available spaces (indicated by the numbers on the board)
+        + input validation 
 
-        + + The chosen number is replaced on the board with the user's mark (x or o)
+            ![input_validation_letter](./assets/images/input_validation_user_turn_letter.png)
+        
+        + Only able to select from the list of available spaces (indicated by the numbers on the board)
+
+            ![input_validation_letter](./assets/images/input_validation_user_turn_invalid_number.png)
+
+        + The chosen number is replaced on the board with the user's mark (x or o)
     
     + If computer's turn
 
-        + + Randomised selection 
+        + Randomised selection 
         
-        + + Only able to select from list of available spaces (indicated by the numbers on the board)
+        + Only able to select from list of available spaces (indicated by the numbers on the board)
 
-        + + Selected number replaced on board by the computer's mark (x or o)
+        + Selected number replaced on board by the computer's mark (x or o)
     
     + Determine whether there is a winner
 
         + check for three marks in a row horizontally, vertically or diagonally
 
+            ![winning_scenario](./assets/images/winning_scenario_screengrab.png)
+
     + Declare a stalemate (draw) if all of the spaces are used up and neither user or computer has 3 marks in a row
+
+        ![draw_scenarion](./assets/images/stalemate_screengrab.png)
 
 + ## Future Features
 
@@ -82,9 +96,9 @@ I have manually tested this project in the following ways:
 
 + Tested the input validation:
 
-    + + User's mark of choice - entered characters not in list, numbers, special characters, uppercase characters
+    + User's mark of choice - entered characters not in list, numbers, special characters, uppercase characters
 
-    + + User's space on the board - entered characters not in list, numbers, special characters, uppercase characters 
+    + User's space on the board - entered characters not in list, numbers, special characters, uppercase characters 
 
 + Tested in the local terminal and the deployed Heroku app.
 
@@ -94,7 +108,7 @@ I have manually tested this project in the following ways:
 
 + [pythonchecker.com](https://www.pythonchecker.com/)
 
-    + + No hints returned from pythonchecker.com
+    + No hints returned from pythonchecker.com
 
 + Passed code through [codebeautify.com](https://codebeautify.org/python-formatter-beautifier) python formatter.
 

@@ -34,6 +34,14 @@ def computer_mark(user_selection):
     return computer_choice
 
 
+def first_move():
+    """
+    randomises the first turn to make the game more difficult
+    """
+    random_turn = random.choice([-1,0])
+    return random_turn
+
+
 def user_turn():
     """
     Asks user to choose a space, removes choice from available list,
@@ -83,7 +91,7 @@ def computer_turn():
     """
     selects a random number for the computer from available
     list of numbers"""
-    print("Computer's turn: ")
+    simulate_typing("Computer's turn:    ")
     # shuffles list of available numbers
     random.shuffle(available_spaces)
     # chooses random number from list of available numbers
@@ -101,7 +109,7 @@ def simulate_typing(str):
     for i in str:
         sys.stdout.write(i)
         sys.stdout.flush()
-        time.sleep(0.04)
+        time.sleep(0.05)
     sys.stdout.write("\n")
 
 
@@ -116,6 +124,10 @@ simulate_typing("Let's play NOUGHTS & CROSSES!")
 user_selection = choose_mark()
 computer_selection = computer_mark(user_selection)
 design_board(marks)
+
+turn = first_move()
+current_player = 'User' if turn == 0 else 'Computer'
+simulate_typing(f"{current_player} goes first......    ")
 
 while not declare_winner:
     # declares a draw if board is full and there's no winner

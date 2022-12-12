@@ -90,6 +90,14 @@ I have manually tested this project in the following ways:
 
 + I have tested the [README.md](https://github.com/Rob-Mundy/Noughts_and_Crosses#readme) file with the [MD Reader](https://chrome.google.com/webstore/detail/md-reader/medapdbncneneejhbgcjceippjlfkmkg) extension for Chrome.
 
+# Validator Testing
+
++ [pythonchecker.com](https://www.pythonchecker.com/)
+
+    + + No hints returned from pythonchecker.com
+
++ Passed code through [codebeautify.com](https://codebeautify.org/python-formatter-beautifier) python formatter.
+
 # Bugs
 
 + I noticed that the computer's turn was returning the same sequence of numbers despite it being generated via a random function. I found an article on [stackoverflow.com](https://stackoverflow.com/questions/47937813/random-choice-not-acting-random-at-all) that mentioned that lists are only evaluated once, so it was necessary to shuffle the list of available spaces (random.shuffle) before the computer's turn in order to get a truly random outcome.
@@ -104,9 +112,26 @@ I have manually tested this project in the following ways:
 
 ## Heroku 
 
-The site was deployed to Heroku via the following process:
+This project was deployed to Heroku via the following process:
 
-+ 
++ From the homepage click "New" then "Create new app"
+
++ Give the project an appropriate name, select "Europe" as the region then click "Create app"
+
++ In the "Settings" tab, click "Add buildpack" and separately add "node.js" and "python"
+
++ In the "Deployment" tab, select "GitHub - Connect to GitHub" as the Deployment method
+
++ Search for the GitHub project name, "noughts_and_crosses", in the "Search for a repository to connect to" search box
+
++ Click "Connect" button at the bottom of the page
+
++ When connected, scroll to the bottom of the page and in the "Manual deploy" section, select "main" as the chosen branch to deploy and click "Deploy Branch"
+
++ Following a short build process a link to the project becomes available
+
++ Click "View" to [open the project in a new window]()
+
 
 # Credits
 

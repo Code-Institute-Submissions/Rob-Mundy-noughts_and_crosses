@@ -4,15 +4,17 @@ import sys
 import time
 
 
-def design_board(marks):
+def design_board(spaces_dict):
     """
     generates a 3 x 3 board of 9 spaces using a dictionary
     that corresponds to the numbers on a keypad / telephone
     """
-    os.system('cls||clear')
-    board = (f"{marks[1]}|{marks[2]}|{marks[3]}\n"
-            f"{marks[4]}|{marks[5]}|{marks[6]}\n"
-            f"{marks[7]}|{marks[8]}|{marks[9]}")
+    os.system("cls||clear")
+    board = (
+        f"{spaces_dict[1]}|{spaces_dict[2]}|{spaces_dict[3]}\n"
+        f"{spaces_dict[4]}|{spaces_dict[5]}|{spaces_dict[6]}\n"
+        f"{spaces_dict[7]}|{spaces_dict[8]}|{spaces_dict[9]}"
+    )
     simulate_typing(board)
 
 
@@ -21,7 +23,7 @@ def choose_mark():
     asks user to pick a 'x' or 'o' as their mark
     """
     user_choice = None
-    while user_choice not in {'x', 'o'}:
+    while user_choice not in {"x", "o"}:
         user_choice = input('Please select "o" or "x"\n')
     return user_choice
 
@@ -30,7 +32,7 @@ def computer_mark(user_selection):
     """
     determines computer's mark based on user's input
     """
-    computer_choice = 'x' if user_selection == 'o' else 'o'
+    computer_choice = "x" if user_selection == "o" else "o"
     return computer_choice
 
 
@@ -38,7 +40,7 @@ def first_turn():
     """
     randomises the first turn to make the game more difficult
     """
-    random_turn = random.choice([1,0])
+    random_turn = random.choice([1, 0])
     return random_turn
 
 
@@ -60,29 +62,32 @@ def user_turn():
         # removes user's choice from available numbers
         available_spaces.remove(user_input)
         # replaces the placeholder number on board with user's mark (x or o)
-        marks[user_input] = user_selection
+        spaces_dict[user_input] = user_selection
         break
 
 
-def check_winner(marks):
+def check_winner(spaces_dict):
     """
     check whether there is 3 in a row of either mark (x / o)
     """
     # Check horizontal 3 in a row
-    if (marks[1] == marks[2] == marks[3]) \
-        or (marks[4] == marks[5] == marks[6]) \
-        or (marks[7] == marks[8] == marks[9]):
+    if (
+        (spaces_dict[1] == spaces_dict[2] == spaces_dict[3])
+        or (spaces_dict[4] == spaces_dict[5] == spaces_dict[6])
+        or (spaces_dict[7] == spaces_dict[8] == spaces_dict[9])
+    ):
         simulate_typing(f"{current_player} wins!")
         return True
     # Check vertical 3 in a row
-    elif (marks[1] == marks[4] == marks[7]) \
-        or (marks[2] == marks[5] == marks[8]) \
-        or (marks[3] == marks[6] == marks[9]):
+    elif (
+        (spaces_dict[1] == spaces_dict[4] == spaces_dict[7])
+        or (spaces_dict[2] == spaces_dict[5] == spaces_dict[8])
+        or (spaces_dict[3] == spaces_dict[6] == spaces_dict[9])
+    ):
         simulate_typing(f"{current_player} wins!")
         return True
     # Check diagonal 3 in a row
-    elif (marks[1] == marks[5] == marks[9]) \
-        or (marks[3] == marks[5] == marks[7]):
+    elif (spaces_dict[1] == spaces_dict[5] == spaces_dict[9]) or (spaces_dict[3] == spaces_dict[5] == spaces_dict[7]):
         simulate_typing(f"{current_player} wins!")
         return True
 
@@ -99,7 +104,7 @@ def computer_turn():
     # removes computer's choice from available numbers
     available_spaces.remove(computer_input)
     # replaces the placeholder number on board with computer's mark (x or o)
-    marks[computer_input] = computer_selection
+    spaces_dict[computer_input] = computer_selection
 
 
 def simulate_typing(str):
@@ -113,20 +118,20 @@ def simulate_typing(str):
     sys.stdout.write("\n")
 
 
-marks = {1:'1', 2:'2', 3:'3', 4:'4', 5:'5', 6:'6', 7:'7', 8:'8', 9:'9'}
-available_spaces = [1,2,3,4,5,6,7,8,9]
+spaces_dict = {1: "1", 2: "2", 3: "3", 4: "4", 5: "5", 6: "6", 7: "7", 8: "8", 9: "9"}
+available_spaces = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 declare_winner = False
 turn = 0
 current_player = None
 
-os.system('cls||clear')
+os.system("cls||clear")
 simulate_typing("Let's play NOUGHTS & CROSSES!")
 user_selection = choose_mark()
 computer_selection = computer_mark(user_selection)
-design_board(marks)
+design_board(spaces_dict)
 
 turn = first_turn()
-current_player = 'User' if turn == 0 else 'Computer'
+current_player = "User" if turn == 0 else "Computer"
 simulate_typing(f"{current_player} goes first     ")
 
 while not declare_winner:
@@ -143,7 +148,7 @@ while not declare_winner:
         else:
             computer_turn()
             current_player = "Computer"
-        design_board(marks)
-        declare_winner = check_winner(marks)
+        design_board(spaces_dict)
+        declare_winner = check_winner(spaces_dict)
         turn += 1
         break

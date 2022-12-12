@@ -123,8 +123,10 @@ def simulate_typing(string):
     sys.stdout.write("\n")
 
 
-spaces = {1: "1", 2: "2", 3: "3", 4: "4", 5: "5",
-          6: "6", 7: "7", 8: "8", 9: "9"}
+spaces = {
+        1: "1", 2: "2", 3: "3", 4: "4", 5: "5",
+        6: "6", 7: "7", 8: "8", 9: "9"
+}
 available_spaces = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 declare_winner = False
 turn = 0

@@ -25,10 +25,44 @@ The winner is the player that places 3 of their marks in a row.
 # Features
 
 + ## Existing Features
-    
-    + 
 
-    + 
+    + Creation of a 3 x 3 game board
+
+        + + Pre-populated with placeholder numbers
+
+        + + Placeholders replaced each turn by user/computer's designated marks
+    
+    + User is able to select their mark, x or o, via an input command
+
+        + + input validation limited to x or o
+
+    + Automatic designation of computer's mark based on user's input
+
+    + Play against the computer
+
+    + First turn randomised between user and computer
+
+    + Alternate turns between user and computer by incrementing the turn variable
+
+    + If user's turn, accept input 
+
+        + + input validation - passed available spaces as list (indicated by the numbers on the board)
+
+        + + replace the chosen number with the user's mark (x or o)
+    
+    + If computer's turn
+
+        + + input validation - passed available spaces as list (indicated by the numbers on the board)
+
+        + + replace the chosen number with the user's mark (x or o)
+    
+    + Determine whether there is a winner
+
+        + check for three marks in a row horizontally, vertically or diagonally
+
+    + Declare a stalemate (draw) if all of the spaces are used up and neither user or computer has 3 marks in a row
+
+
 
 + ## Future Features
 

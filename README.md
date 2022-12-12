@@ -18,7 +18,7 @@ In this version the player inputs ther choice of mar (x or o) and the initial bo
 
 Rather than presenting empty spaces and using coordinates, the available spaces on the board are presented as numbers 1 - 9, arranged as they would be on a keypad.
 
-The game alternates between the user and computer, and their marks are entered onto the board in place of the numbers.
+The game alternates between the user and computer, whose marks are entered onto the board in place of the initial grid numbers.
 
 The winner is the player that places 3 of their marks in a row.
 
@@ -32,9 +32,9 @@ The winner is the player that places 3 of their marks in a row.
 
 + ## Future Features
 
-    + Add play again function to reset board.
-    
-    + Add option for two player mode rather than vs computer.
+    + Add a play again function to reset the board.
+
+    + Add the option for two-player mode rather than user vs computer.
 
     + Apply some logic to make the computer more competitive as playing against randomly-generated moves isn't particularly challenging.
 
@@ -48,9 +48,9 @@ I have manually tested this project in the following ways:
 
 # Bugs
 
-+    
++ I reached the terminal row limit when testing my initial Heroku deployment which meant the game could not be completed. This was resolved by clearing the terminal each round instead of prining multiple versions of the board.  See function replace_terminal() for details.
 
-+ 
++ The computer's turn was printed to the terminal far too quickly for the user to read, so I found a set of libraries and a function that mimics typing so that the information can be properly digested each turn.  See function simulate_typing() for details.
 
 + There are no outstanding bugs
 
@@ -66,6 +66,6 @@ The site was deployed to Heroku via the following process:
 
 ## Content
 
-+ 
++ replace_terminal() - The idea for clearing/replacing the terminal was sourced from [stackoverflow.com](https://stackoverflow.com/questions/2084508/clear-terminal-in-python).
 
-+ 
++ simulate_typing() - The code to simulate typing while printing was also sourced from [stackoverflow.com](https://stackoverflow.com/questions/58763136/printing-every-thing-slowly-simulate-typing)

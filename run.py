@@ -38,7 +38,7 @@ def first_turn():
     """
     randomises the first turn to make the game more difficult
     """
-    random_turn = random.choice([-1,0])
+    random_turn = random.choice([1,0])
     return random_turn
 
 

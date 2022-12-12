@@ -34,7 +34,7 @@ def computer_mark(user_selection):
     return computer_choice
 
 
-def first_move():
+def first_turn():
     """
     randomises the first turn to make the game more difficult
     """
@@ -125,9 +125,9 @@ user_selection = choose_mark()
 computer_selection = computer_mark(user_selection)
 design_board(marks)
 
-turn = first_move()
+turn = first_turn()
 current_player = 'User' if turn == 0 else 'Computer'
-simulate_typing(f"{current_player} goes first......    ")
+simulate_typing(f"{current_player} goes first     ")
 
 while not declare_winner:
     # declares a draw if board is full and there's no winner

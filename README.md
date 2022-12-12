@@ -46,15 +46,19 @@ The winner is the player that places 3 of their marks in a row.
 
     + If user's turn, accept input 
 
-        + + input validation - passed available spaces as list (indicated by the numbers on the board)
+        + + input validation 
+        
+        + + Only able to select from the list of available spaces (indicated by the numbers on the board)
 
-        + + replace the chosen number with the user's mark (x or o)
+        + + The chosen number is replaced on the board with the user's mark (x or o)
     
     + If computer's turn
 
-        + + input validation - passed available spaces as list (indicated by the numbers on the board)
+        + + Randomised selection 
+        
+        + + Only able to select from list of available spaces (indicated by the numbers on the board)
 
-        + + replace the chosen number with the user's mark (x or o)
+        + + Selected number replaced on board by the computer's mark (x or o)
     
     + Determine whether there is a winner
 
@@ -62,21 +66,27 @@ The winner is the player that places 3 of their marks in a row.
 
     + Declare a stalemate (draw) if all of the spaces are used up and neither user or computer has 3 marks in a row
 
-
-
 + ## Future Features
 
     + Add a play again function to reset the board.
 
     + Add the option for two-player mode rather than user vs computer.
 
-    + Apply some logic to make the computer more competitive as playing against randomly-generated moves isn't particularly challenging.
+    + Apply some logic to make the computer more competitive.
 
 # Testing
 
 I have manually tested this project in the following ways: 
 
 + The program passed through [pythonchecker.com](https://www.pythonchecker.com/) without any hints.
+
++ Tested the input validation:
+
+    + + User's mark of choice - entered characters not in list, numbers, special characters, uppercase characters
+
+    + + User's space on the board - entered characters not in list, numbers, special characters, uppercase characters 
+
++ Tested in the local terminal and the deployed Heroku app.
 
 + I have tested the [README.md](https://github.com/Rob-Mundy/Noughts_and_Crosses#readme) file with the [MD Reader](https://chrome.google.com/webstore/detail/md-reader/medapdbncneneejhbgcjceippjlfkmkg) extension for Chrome.
 

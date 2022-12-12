@@ -119,7 +119,7 @@ design_board(marks)
 
 while not declare_winner:
     # declares a draw if board is full and there's no winner
-    if turn == 9:
+    if not available_spaces:
         simulate_typing("It's a stalemate!")
         break
 

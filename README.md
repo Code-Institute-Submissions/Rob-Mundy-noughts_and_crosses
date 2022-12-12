@@ -32,6 +32,8 @@ The winner is the player that places 3 of their marks in a row.
 
 + ## Future Features
 
+    + Add play again function to reset board.
+    
     + Add option for two player mode rather than vs computer.
 
     + Apply some logic to make the computer more competitive as playing against randomly-generated moves isn't particularly challenging.

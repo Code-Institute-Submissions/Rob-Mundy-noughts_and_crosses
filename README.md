@@ -48,6 +48,8 @@ I have manually tested this project in the following ways:
 
 # Bugs
 
++ I noticed that the computer's turn was returning the same sequence of numbers despite it being generated via a random function. I found an article on [stackoverflow.com](https://stackoverflow.com/questions/47937813/random-choice-not-acting-random-at-all) that mentioned that lists are only evaluated once, so it was necessary to shuffle the list of available spaces (random.shuffle) before the computer's turn in order to get a truly random outcome.
+
 + I reached the terminal row limit when testing my initial Heroku deployment which meant the game could not be completed. This was resolved by clearing the terminal each round instead of prining multiple versions of the board.  See function replace_terminal() for details.
 
 + The computer's turn was printed to the terminal far too quickly for the user to read, so I found a set of libraries and a function that mimics typing so that the information can be properly digested each turn.  See function simulate_typing() for details.

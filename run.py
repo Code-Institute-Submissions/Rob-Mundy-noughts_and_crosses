@@ -129,7 +129,7 @@ spaces = {
 }
 available_spaces = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 declare_winner = False
-turn = 0
+# turn = None
 current_player = None
 
 os.system("cls||clear")

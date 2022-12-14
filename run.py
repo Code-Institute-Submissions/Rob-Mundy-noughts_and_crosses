@@ -109,6 +109,8 @@ def computer_turn():
     spaces[computer_input] = computer_selection
 
 
+# this code was sourced from the following article:
+# https://stackoverflow.com/questions/58763136/printing-every-thing-slowly-simulate-typing
 def simulate_typing(string):
     """
     prints to the terminal as if typing

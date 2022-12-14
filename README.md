@@ -76,9 +76,13 @@ The winner is the player that places 3 of their marks in a row.
 
             ![winning_scenario](./assets/images/winning_scenario_screengrab.png)
 
-    + Declare a stalemate (draw) if all of the spaces are used up and neither user nor computer has 3 marks in a row
+    + Declare a stalemate (draw) if all of the spaces are used up and neither user nor the computer has 3 marks in a row
 
         ![draw_scenarion](./assets/images/stalemate_screengrab.png)
+
+    + Play again if the user so wishes
+
+        ![play_again_prompt](./assets/images/play_again_screengrab.png.png)
 
 + ## Future Features
 

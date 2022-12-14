@@ -2,6 +2,7 @@ import random
 import os
 import sys
 import time
+from distutils.util import strtobool
 
 
 def welcome_screen():
@@ -97,7 +98,7 @@ def check_winner(dictionary):
         or (spaces[4] == spaces[5] == spaces[6])
         or (spaces[7] == spaces[8] == spaces[9])
     ):
-        simulate_typing(f'{current_player} wins!')
+        simulate_typing(f'{current_player} wins!\n')
         return True
     # check vertical 3 in a row
     elif (
@@ -105,14 +106,14 @@ def check_winner(dictionary):
         or (spaces[2] == spaces[5] == spaces[8])
         or (spaces[3] == spaces[6] == spaces[9])
     ):
-        simulate_typing(f'{current_player} wins!')
+        simulate_typing(f'{current_player} wins!\n')
         return True
     # check diagonal 3 in a row
     elif (
         (spaces[1] == spaces[5] == spaces[9])
         or (spaces[3] == spaces[5] == spaces[7])
     ):
-        simulate_typing(f'{current_player} wins!')
+        simulate_typing(f'{current_player} wins!\n')
         return True
     else:
         return False
@@ -134,6 +135,17 @@ def computer_turn():
     spaces[computer_input] = computer_selection
 
 
+def play_again():
+    """
+    asks the user whether they wish to play again,
+    resets board if so or alternatively stops the game
+    """
+    rerun_game = None
+    while rerun_game not in {"y", "n"}:
+        rerun_game = input('Play again? y or n\n').lower()
+    return strtobool(rerun_game)
+
+
 # this code was sourced from the following article:
 # https://stackoverflow.com/questions/58763136/printing-every-thing-slowly-simulate-typing
 def simulate_typing(string):
@@ -147,39 +159,44 @@ def simulate_typing(string):
     sys.stdout.write("\n")
 
 
-spaces = {
-        1: "1", 2: "2", 3: "3", 4: "4", 5: "5",
-        6: "6", 7: "7", 8: "8", 9: "9"
-}
-available_spaces = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-declare_winner = False
-current_player = None
-
 welcome_screen()
-user_selection = choose_mark()
-computer_selection = computer_mark(user_selection)
-design_board(spaces)
-game_instructions()
-turn = first_turn()
-current_player = "User" if turn == 0 else "Computer"
-simulate_typing(f"{current_player} goes first    ")
 
-while not declare_winner:
-    # declares a draw if board is full and there's no winner
-    if not available_spaces:
-        simulate_typing("It's a stalemate!")
-        break
+while True:
+    spaces = {
+            1: "1", 2: "2", 3: "3", 4: "4", 5: "5",
+            6: "6", 7: "7", 8: "8", 9: "9"
+    }
+    available_spaces = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    declare_winner = False
+    current_player = None
 
-    # iterates turn if there are available spaces on the board
-    # alternates between user and computer
-    while available_spaces:
-        if turn % 2 == 0:
-            user_turn()
-            current_player = "User"
-        else:
-            computer_turn()
-            current_player = "Computer"
-        design_board(spaces)
-        declare_winner = check_winner(spaces)
-        turn += 1
+    user_selection = choose_mark()
+    computer_selection = computer_mark(user_selection)
+    design_board(spaces)
+    game_instructions()
+    turn = first_turn()
+    current_player = "User" if turn == 0 else "Computer"
+    simulate_typing(f"{current_player} goes first    ")
+
+    while not declare_winner:
+        # declares a draw if board is full and there's no winner
+        if not available_spaces:
+            simulate_typing("It's a stalemate!")
+            break
+
+        # iterates turn if there are available spaces on the board
+        # alternates between user and computer
+        while available_spaces:
+            if turn % 2 == 0:
+                user_turn()
+                current_player = "User"
+            else:
+                computer_turn()
+                current_player = "Computer"
+            design_board(spaces)
+            declare_winner = check_winner(spaces)
+            turn += 1
+            break
+
+    if not play_again():
         break

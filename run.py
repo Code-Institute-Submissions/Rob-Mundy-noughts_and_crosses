@@ -35,7 +35,7 @@ def choose_mark():
     """
     user_choice = None
     while user_choice not in {"x", "o"}:
-        user_choice = input('Please choose your mark, "o" or "x"\n')
+        user_choice = input('Please choose your mark, "o" or "x"\n').lower()
     return user_choice
 
 

@@ -86,8 +86,6 @@ The winner is the player that places 3 of their marks in a row.
 
 + ## Future Features
 
-    + Add a play again function to reset the board.
-
     + Add the option for two-player mode rather than user vs computer.
 
     + Apply some logic to make the computer more competitive.

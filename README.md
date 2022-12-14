@@ -46,11 +46,11 @@ The winner is the player that places 3 of their marks in a row.
     
     + Play against the computer
 
-    + The first turn is randomised between user and computer
+    + The first turn is randomised between the user and the computer
 
     + Alternate turns between user and computer by incrementing the turn variable
 
-    + If user's turn, accept input 
+    + If it's the user's turn, accept the user's input 
 
         + input validation 
 
@@ -62,11 +62,11 @@ The winner is the player that places 3 of their marks in a row.
 
         + The chosen number is replaced on the board with the user's mark (x or o)
     
-    + If computer's turn
+    + If it's the computer's turn
 
         + Randomised selection 
         
-        + Only able to select from list of available spaces (indicated by the numbers on the board)
+        + Only able to select from the list of available spaces (indicated by the numbers on the board)
 
         + Selected number replaced on board by the computer's mark (x or o)
     
@@ -98,11 +98,11 @@ I have manually tested this project in the following ways:
 
 + Tested the input validation:
 
-    + User's mark of choice - entered characters not in list, numbers, special characters, uppercase characters
+    + User's mark of choice - I attempted to enter characters that weren't in the available list: numbers, special characters, uppercase characters
 
-    + User's space on the board - entered characters not in list, numbers, special characters, uppercase characters 
+    + User's space on the board - I attempted to enter characters that weren't in the available list: numbers, special characters, uppercase characters
 
-+ Tested in the local terminal and the deployed Heroku app.
++ Tested that the program works as expected in the local terminal and the deployed Heroku app.
 
 + I have tested the [README.md](https://github.com/Rob-Mundy/Noughts_and_Crosses#readme) file with the [MD Reader](https://chrome.google.com/webstore/detail/md-reader/medapdbncneneejhbgcjceippjlfkmkg) extension for Chrome.
 
@@ -120,7 +120,7 @@ I have manually tested this project in the following ways:
 
 # Bugs
 
-+ I noticed that the computer's turn was returning the same sequence of numbers despite it being generated via a random function. I found an article on [stackoverflow.com](https://stackoverflow.com/questions/47937813/random-choice-not-acting-random-at-all) that mentioned that lists are only evaluated once, so it was necessary to shuffle the list of available spaces (random.shuffle) before the computer's turn in order to get a truly random outcome.
++ I noticed that the computer's turn was returning the same sequence of numbers despite it being generated via a random function. I found an article on [stackoverflow.com](https://stackoverflow.com/questions/47937813/random-choice-not-acting-random-at-all) that mentioned that lists are only evaluated once, so it was necessary to shuffle the list of available spaces (random.shuffle) before the computer's turn to get a truly random outcome.
 
 + I reached the terminal row limit when testing my initial Heroku deployment which meant the game could not be completed. This was resolved by clearing the terminal each round instead of printing multiple versions of the board.  See function replace_terminal() for details.
 
@@ -150,7 +150,7 @@ This project was deployed to Heroku via the following process:
 
 + Search for the GitHub project name, "noughts_and_crosses", in the "Search for a repository to connect to" search box
 
-+ Click "Connect" button at the bottom of the page
++ Click the "Connect" button at the bottom of the page
 
 + When connected, scroll to the bottom of the page and in the "Manual deploy" section, select "main" as the chosen branch to deploy and click "Deploy Branch"
 

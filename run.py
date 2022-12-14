@@ -27,7 +27,7 @@ def design_board(spaces):
     os.system("cls||clear")
     simulate_typing(spaces[1]+'|'+spaces[2]+'|'+spaces[3])
     simulate_typing(spaces[4]+'|'+spaces[5]+'|'+spaces[6])
-    simulate_typing(spaces[7]+'|'+spaces[8]+'|'+spaces[9])
+    simulate_typing(spaces[7]+'|'+spaces[8]+'|'+spaces[9]+'\n')
 
 
 def choose_mark():
@@ -52,8 +52,7 @@ def game_instructions():
     """
     prints instructions to the terminal
     """
-    simulate_typing("""
-Each number on the board represents
+    simulate_typing("""Each number on the board represents
 an empty space to place your mark.
     """)
 
@@ -181,7 +180,7 @@ while True:
     while not declare_winner:
         # declares a draw if board is full and there's no winner
         if not available_spaces:
-            simulate_typing("It's a stalemate!")
+            simulate_typing("It's a stalemate!\n")
             break
 
         # iterates turn if there are available spaces on the board

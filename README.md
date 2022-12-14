@@ -167,4 +167,6 @@ This project was deployed to Heroku via the following process:
 
 + replace_terminal() - The idea for clearing/replacing the terminal was sourced from [stackoverflow.com](https://stackoverflow.com/questions/2084508/clear-terminal-in-python).
 
-+ simulate_typing() - The code to simulate typing while printing was also sourced from [stackoverflow.com](https://stackoverflow.com/questions/58763136/printing-every-thing-slowly-simulate-typing)
++ simulate_typing() - The code to simulate typing while printing was also sourced from [stackoverflow.com](https://stackoverflow.com/questions/58763136/printing-every-thing-slowly-simulate-typing).
+
++ The idea for converting yes or no string values to boolean using strtobool was sourced from [note.nkmk.me](https://note.nkmk.me/en/python-bool-true-false-usage/).

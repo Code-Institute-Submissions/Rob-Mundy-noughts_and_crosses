@@ -73,7 +73,7 @@ def check_winner(dictionary):
         or (spaces[4] == spaces[5] == spaces[6])
         or (spaces[7] == spaces[8] == spaces[9])
     ):
-        simulate_typing(f"{current_player} wins!")
+        simulate_typing({current_player}+'wins!')
         return True
     # check vertical 3 in a row
     elif (
@@ -81,14 +81,14 @@ def check_winner(dictionary):
         or (spaces[2] == spaces[5] == spaces[8])
         or (spaces[3] == spaces[6] == spaces[9])
     ):
-        simulate_typing(f"{current_player} wins!")
+        simulate_typing({current_player}+'wins!')
         return True
     # check diagonal 3 in a row
     elif (
         (spaces[1] == spaces[5] == spaces[9])
         or (spaces[3] == spaces[5] == spaces[7])
     ):
-        simulate_typing(f"{current_player} wins!")
+        simulate_typing({current_player}+'wins!')
         return True
     else:
         return False
@@ -136,7 +136,7 @@ design_board(spaces)
 
 turn = first_turn()
 current_player = "User" if turn == 0 else "Computer"
-simulate_typing(f"{current_player} goes first     ")
+simulate_typing(f"{current_player} goes first    ")
 
 while not declare_winner:
     # declares a draw if board is full and there's no winner

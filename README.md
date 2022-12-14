@@ -94,6 +94,8 @@ I have manually tested this project in the following ways:
 
 + The program passed through [pythonchecker.com](https://www.pythonchecker.com/) without any hints.
 
++ The program pass through [CI Python Linter](https://pep8ci.herokuapp.com/) without any errors.
+
 + Tested the input validation:
 
     + User's mark of choice - entered characters not in list, numbers, special characters, uppercase characters
@@ -105,6 +107,10 @@ I have manually tested this project in the following ways:
 + I have tested the [README.md](https://github.com/Rob-Mundy/Noughts_and_Crosses#readme) file with the [MD Reader](https://chrome.google.com/webstore/detail/md-reader/medapdbncneneejhbgcjceippjlfkmkg) extension for Chrome.
 
 # Validator Testing
+
++ [CI Python Linter](https://pep8ci.herokuapp.com/)
+
+    + Passed through, all clear no errors found
 
 + [pythonchecker.com](https://www.pythonchecker.com/)
 
@@ -119,6 +125,12 @@ I have manually tested this project in the following ways:
 + I reached the terminal row limit when testing my initial Heroku deployment which meant the game could not be completed. This was resolved by clearing the terminal each round instead of printing multiple versions of the board.  See function replace_terminal() for details.
 
 + The computer's turn was printed to the terminal far too quickly for the user to read, so I found a set of libraries and a function that mimics typing so that the information can be properly digested each turn.  See function simulate_typing() for details.
+
++ In order for the code to pass through [infoheap.com's pylint syntax checker](https://infoheap.com/python-lint-online/), it was necessary to change several f-string instances:
+
+    + The design_board function was changed so that three distinct lines were printed to the terminal rather than a continuation of a single f-string.
+
+    + f-strings passed to simulate_typing functions were also flagged as having invalid syntax so "simulate_typing(f"{current_player} wins!")" was changed to "simulate_typing({current_player}+'wins!')"
 
 + There are no outstanding bugs
 

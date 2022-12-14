@@ -120,8 +120,9 @@ def check_winner(dictionary):
 
 def computer_turn():
     """
-    selects a random number for the computer from available
-    list of numbers"""
+    selects a random number for the computer from the available
+    list of spaces
+    """
     simulate_typing("Computer's turn:    ")
     # shuffles list of available numbers
     random.shuffle(available_spaces)

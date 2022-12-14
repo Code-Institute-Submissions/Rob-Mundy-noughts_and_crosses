@@ -4,7 +4,7 @@ import sys
 import time
 
 
-def design_board(available_spaces):
+def design_board(spaces):
     """
     generates a 3 x 3 board of 9 spaces using a dictionary
     that corresponds to the numbers on a keypad / telephone

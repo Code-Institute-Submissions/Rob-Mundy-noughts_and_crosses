@@ -4,7 +4,7 @@ import sys
 import time
 
 
-def design_board(dictionary):
+def design_board(available_spaces):
     """
     generates a 3 x 3 board of 9 spaces using a dictionary
     that corresponds to the numbers on a keypad / telephone
@@ -46,7 +46,7 @@ def first_turn():
 
 def user_turn():
     """
-    Asks user to choose a space, removes choice from available list,
+    asks user to choose a space, removes choice from available list,
     places user's mark on the board
     """
     while True:
@@ -78,7 +78,7 @@ def check_winner(dictionary):
     ):
         simulate_typing(f"{current_player} wins!")
         return True
-    # Check vertical 3 in a row
+    # check vertical 3 in a row
     elif (
         (spaces[1] == spaces[4] == spaces[7])
         or (spaces[2] == spaces[5] == spaces[8])
@@ -86,7 +86,7 @@ def check_winner(dictionary):
     ):
         simulate_typing(f"{current_player} wins!")
         return True
-    # Check diagonal 3 in a row
+    # check diagonal 3 in a row
     elif (
         (spaces[1] == spaces[5] == spaces[9])
         or (spaces[3] == spaces[5] == spaces[7])
@@ -114,7 +114,7 @@ def computer_turn():
 
 def simulate_typing(string):
     """
-    Prints to the terminal as if typing
+    prints to the terminal as if typing
     """
     for i in string:
         sys.stdout.write(i)
@@ -129,7 +129,6 @@ spaces = {
 }
 available_spaces = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 declare_winner = False
-# turn = None
 current_player = None
 
 os.system("cls||clear")
@@ -149,6 +148,7 @@ while not declare_winner:
         break
 
     # iterates turn if there are available spaces on the board
+    # alternates between user and computer
     while available_spaces:
         if turn % 2 == 0:
             user_turn()

@@ -16,25 +16,17 @@ There are 8 possible ways to win by placing 3 of your chosen marks in a row hori
 
 A stalemate will be declared if all of the spaces are populated without either player placing 3 in a row.
 
-In this version the player inputs ther choice of mar (x or o) and the initial board is drawn.
+In this version, the player inputs their chosen mark (x or o) and the initial board is drawn.
 
-Rather than presenting empty spaces and using coordinates, the available spaces on the board are presented as numbers 1 - 9, arranged as they would be on a keypad.
+Rather than presenting empty spaces and using coordinates, the available spaces on the board are displayed as numbers 1 - 9, arranged as they would be on a keypad.
 
-The game alternates between the user and computer, whose marks are entered onto the board in place of the initial grid numbers.
+The game alternates between the user and the computer, whose marks are entered onto the board in place of the initial grid numbers.
 
 The winner is the player that places 3 of their marks in a row.
 
 # Features
 
 + ## Existing Features
-
-    + Creation of a 3 x 3 game board
-
-        + Pre-populated with placeholder numbers
-
-        + Placeholders replaced each turn by user/computer's designated marks
-
-            ![starting_board](./assets/images/starting_grid_screengrab.png)
     
     + User is able to select their mark, x or o, via an input command
 
@@ -43,10 +35,18 @@ The winner is the player that places 3 of their marks in a row.
             ![input_validation](./assets/images/input_validation_mark_screengrab.png)
 
     + Automatic designation of computer's mark based on user's input
+    
+    + Creation of a 3 x 3 game board
 
+        + Pre-populated with placeholder numbers
+
+        + Placeholders replaced each turn by user/computer's designated marks
+
+            ![starting_board](./assets/images/starting_grid_screengrab.png)
+    
     + Play against the computer
 
-    + First turn randomised between user and computer
+    + The first turn is randomised between user and computer
 
     + Alternate turns between user and computer by incrementing the turn variable
 
@@ -76,7 +76,7 @@ The winner is the player that places 3 of their marks in a row.
 
             ![winning_scenario](./assets/images/winning_scenario_screengrab.png)
 
-    + Declare a stalemate (draw) if all of the spaces are used up and neither user or computer has 3 marks in a row
+    + Declare a stalemate (draw) if all of the spaces are used up and neither user nor computer has 3 marks in a row
 
         ![draw_scenarion](./assets/images/stalemate_screengrab.png)
 
@@ -116,7 +116,7 @@ I have manually tested this project in the following ways:
 
 + I noticed that the computer's turn was returning the same sequence of numbers despite it being generated via a random function. I found an article on [stackoverflow.com](https://stackoverflow.com/questions/47937813/random-choice-not-acting-random-at-all) that mentioned that lists are only evaluated once, so it was necessary to shuffle the list of available spaces (random.shuffle) before the computer's turn in order to get a truly random outcome.
 
-+ I reached the terminal row limit when testing my initial Heroku deployment which meant the game could not be completed. This was resolved by clearing the terminal each round instead of prining multiple versions of the board.  See function replace_terminal() for details.
++ I reached the terminal row limit when testing my initial Heroku deployment which meant the game could not be completed. This was resolved by clearing the terminal each round instead of printing multiple versions of the board.  See function replace_terminal() for details.
 
 + The computer's turn was printed to the terminal far too quickly for the user to read, so I found a set of libraries and a function that mimics typing so that the information can be properly digested each turn.  See function simulate_typing() for details.
 
@@ -142,7 +142,7 @@ This project was deployed to Heroku via the following process:
 
 + When connected, scroll to the bottom of the page and in the "Manual deploy" section, select "main" as the chosen branch to deploy and click "Deploy Branch"
 
-+ Following a short build process a link to the project becomes available
++ Following a short build process, a link to the project becomes available
 
 + Click "View" to [open the project in a new window](https://noughts-and-crosses-rm.herokuapp.com/)
 

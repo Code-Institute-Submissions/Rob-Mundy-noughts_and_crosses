@@ -4,6 +4,20 @@ import sys
 import time
 
 
+def welcome_screen():
+    """
+    prints welcome message to screen and confirms the rules
+    """
+    os.system("cls||clear")
+    simulate_typing("LET'S PLAY NOUGHTS & CROSSES!")
+    simulate_typing("""
+----------------------------------------------
+The first player to place three marks in a row
+horizontally, vertically or diagonally wins!
+----------------------------------------------
+    """)
+
+
 def design_board(spaces):
     """
     generates a 3 x 3 board of 9 spaces using a dictionary
@@ -21,7 +35,7 @@ def choose_mark():
     """
     user_choice = None
     while user_choice not in {"x", "o"}:
-        user_choice = input('Please select "o" or "x"\n')
+        user_choice = input('Please choose your mark, "o" or "x"\n')
     return user_choice
 
 
@@ -31,6 +45,16 @@ def computer_mark(string):
     """
     computer_choice = "x" if user_selection == "o" else "o"
     return computer_choice
+
+
+def game_instructions():
+    """
+    prints instructions to the terminal
+    """
+    simulate_typing("""
+Each number on the board represents
+an empty space to place your mark.
+    """)
 
 
 def first_turn():
@@ -73,7 +97,7 @@ def check_winner(dictionary):
         or (spaces[4] == spaces[5] == spaces[6])
         or (spaces[7] == spaces[8] == spaces[9])
     ):
-        simulate_typing({current_player}+'wins!')
+        simulate_typing(f'{current_player} wins!')
         return True
     # check vertical 3 in a row
     elif (
@@ -81,14 +105,14 @@ def check_winner(dictionary):
         or (spaces[2] == spaces[5] == spaces[8])
         or (spaces[3] == spaces[6] == spaces[9])
     ):
-        simulate_typing({current_player}+'wins!')
+        simulate_typing(f'{current_player} wins!')
         return True
     # check diagonal 3 in a row
     elif (
         (spaces[1] == spaces[5] == spaces[9])
         or (spaces[3] == spaces[5] == spaces[7])
     ):
-        simulate_typing({current_player}+'wins!')
+        simulate_typing(f'{current_player} wins!')
         return True
     else:
         return False
@@ -118,7 +142,7 @@ def simulate_typing(string):
     for i in string:
         sys.stdout.write(i)
         sys.stdout.flush()
-        time.sleep(0.05)
+        time.sleep(0.04)
     sys.stdout.write("\n")
 
 
@@ -130,12 +154,11 @@ available_spaces = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 declare_winner = False
 current_player = None
 
-os.system("cls||clear")
-simulate_typing("Let's play NOUGHTS & CROSSES!")
+welcome_screen()
 user_selection = choose_mark()
 computer_selection = computer_mark(user_selection)
 design_board(spaces)
-
+game_instructions()
 turn = first_turn()
 current_player = "User" if turn == 0 else "Computer"
 simulate_typing(f"{current_player} goes first    ")

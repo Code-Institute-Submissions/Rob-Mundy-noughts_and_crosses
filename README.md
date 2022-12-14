@@ -128,9 +128,9 @@ I have manually tested this project in the following ways:
 
 + In order for the code to pass through [infoheap.com's pylint syntax checker](https://infoheap.com/python-lint-online/), it was necessary to change several f-string instances:
 
-    + The design_board function was changed so that three distinct lines were printed to the terminal rather than a continuation of a single f-string.
+    + The design_board function was changed so that three distinct lines were printed to the terminal rather than a single lengthy f-string.
 
-    + f-strings passed to simulate_typing functions were also flagged as having invalid syntax so "simulate_typing(f"{current_player} wins!")" was changed to "simulate_typing({current_player}+'wins!')"
+    + f-strings passed to simulate_typing functions were also flagged as having invalid syntax so "simulate_typing(f"{current_player} wins!")" was changed to "simulate_typing({current_player}+'wins!')" but later had to be reverted as it didn't function as intended. As the code passes through the CI Python Linter I have ignored/accepted this error.
 
 + There are no outstanding bugs
 

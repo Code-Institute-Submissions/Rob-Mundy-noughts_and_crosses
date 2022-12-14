@@ -10,12 +10,9 @@ def design_board(available_spaces):
     that corresponds to the numbers on a keypad / telephone
     """
     os.system("cls||clear")
-    board = (
-        f"{spaces[1]}|{spaces[2]}|{spaces[3]}\n"
-        f"{spaces[4]}|{spaces[5]}|{spaces[6]}\n"
-        f"{spaces[7]}|{spaces[8]}|{spaces[9]}"
-    )
-    simulate_typing(board)
+    simulate_typing(spaces[1]+'|'+spaces[2]+'|'+spaces[3])
+    simulate_typing(spaces[4]+'|'+spaces[5]+'|'+spaces[6])
+    simulate_typing(spaces[7]+'|'+spaces[8]+'|'+spaces[9])
 
 
 def choose_mark():

@@ -10,13 +10,15 @@ def welcome_screen():
     prints welcome message to screen and confirms the rules
     """
     os.system("cls||clear")
-    simulate_typing("""
+    simulate_typing(
+        """
 LET'S PLAY NOUGHTS & CROSSES!
 ----------------------------------------------
 The first player to place three marks in a row
 horizontally, vertically or diagonally wins!
 ----------------------------------------------
-    """)
+    """
+    )
 
 
 def design_board(spaces):
@@ -52,9 +54,11 @@ def game_instructions():
     """
     prints instructions to the terminal
     """
-    simulate_typing("""Each number on the board represents
+    simulate_typing(
+        """Each number on the board represents
 an empty space to place your mark.
-    """)
+    """
+    )
 
 
 def first_turn():

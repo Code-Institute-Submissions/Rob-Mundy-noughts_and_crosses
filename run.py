@@ -136,7 +136,7 @@ def computer_turn():
     available_spaces.remove(computer_input)
     # replaces the placeholder number on board with computer's mark (x or o)
     spaces[computer_input] = computer_selection
-
+    
 
 def play_again():
     """

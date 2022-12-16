@@ -106,8 +106,6 @@ I have manually tested this project in the following ways:
 
 + Tested that the program works as expected in the local terminal and the deployed Heroku app.
 
-+ I have tested the [README.md](https://github.com/Rob-Mundy/Noughts_and_Crosses#readme) file with the [MD Reader](https://chrome.google.com/webstore/detail/md-reader/medapdbncneneejhbgcjceippjlfkmkg) extension for Chrome.
-
 # Validator Testing
 
 + [CI Python Linter](https://pep8ci.herokuapp.com/)

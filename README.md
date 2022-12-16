@@ -34,21 +34,21 @@ The winner is the player that places 3 of their marks in a row.
 
             ![input_validation](./assets/images/input_validation_mark_screengrab.png)
 
-    + Automatic designation of computer's mark based on user's input
+    + Automatic designation of the computer's mark based on the user's input
     
     + Creation of a 3 x 3 game board
 
         + Pre-populated with placeholder numbers
 
-        + Placeholders replaced each turn by user/computer's designated marks
+        + Placeholders replaced each turn by the user/computer's designated marks
 
             ![starting_board](./assets/images/starting_grid_screengrab.png)
     
     + Play against the computer
 
-    + The first turn is randomised between the user and the computer
+    + The first turn is randomised between the the user and computer
 
-    + Alternate turns between user and computer by incrementing the turn variable
+    + Alternate turns between the user and computer by incrementing the turn variable
 
     + If it's the user's turn, accept the user's input 
 

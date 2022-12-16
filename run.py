@@ -21,7 +21,7 @@ horizontally, vertically or diagonally wins!
     )
 
 
-def design_board(spaces):
+def update_board(spaces):
     """
     generates a 3 x 3 board of 9 spaces using a dictionary
     that corresponds to the numbers on a keypad / telephone
@@ -175,7 +175,7 @@ while True:
 
     user_selection = choose_mark()
     computer_selection = computer_mark(user_selection)
-    design_board(spaces)
+    update_board(spaces)
     game_instructions()
     turn = first_turn()
     current_player = "User" if turn == 0 else "Computer"
@@ -196,7 +196,7 @@ while True:
             else:
                 computer_turn()
                 current_player = "Computer"
-            design_board(spaces)
+            update_board(spaces)
             declare_winner = check_winner(spaces)
             turn += 1
             break

@@ -1,3 +1,5 @@
+"""Noughts and Crosses"""
+
 import random
 import os
 import sys

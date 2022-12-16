@@ -10,8 +10,8 @@ def welcome_screen():
     prints welcome message to screen and confirms the rules
     """
     os.system("cls||clear")
-    simulate_typing("LET'S PLAY NOUGHTS & CROSSES!")
     simulate_typing("""
+LET'S PLAY NOUGHTS & CROSSES!
 ----------------------------------------------
 The first player to place three marks in a row
 horizontally, vertically or diagonally wins!
@@ -198,4 +198,6 @@ while True:
             break
 
     if not play_again():
+        os.system("cls||clear")
+        simulate_typing("Thanks for playing!")
         break
